@@ -39,7 +39,7 @@
       {{ end }}
       {{ $iconPack := .iconPack | default .icon_pack }}
       {{/* Deprecation warning(v1.0.0) ends */}}
-      {{ $src := print $iconPack " fa-" .icon }}
+      {{ $src := print $iconPack " " .icon }}
       <div class="mx-2 mb-2 mt-4 md:mx-0 md:mt-2">
         <a href="{{ .url }}"><i class="{{ print $src }}"></i></a>
       </div>

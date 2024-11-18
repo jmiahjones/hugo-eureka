@@ -22,7 +22,7 @@
 {{/* authors */}}
 {{ range (.Site.GetPage "taxonomyTerm" "authors").Pages }}
   {{ range .Params.social }}
-    {{ $icon := partial "utils/camelize" (print "fa-" .icon) }}
+    {{ $icon := partial "utils/camelize" (print .icon) }}
     {{ if and (eq .iconPack "fas") (not (in $fasIcons $icon)) }}
       {{ $fasIcons = $fasIcons | append $icon }}
     {{ else if and (eq .iconPack "fab") (not (in $fabIcons $icon)) }}
@@ -39,7 +39,7 @@
 {{ range $widgets }}
   {{ if eq .Params.widget.handler "about" }}
     {{ range .Params.social }}
-      {{ $icon := partial "utils/camelize" (print "fa-" .icon) }}
+      {{ $icon := partial "utils/camelize" (print .icon) }}
       {{ if and (eq .iconPack "fas") (not (in $fasIcons $icon)) }}
         {{ $fasIcons = $fasIcons | append $icon }}
       {{ else if and (eq .iconPack "fab") (not (in $fabIcons $icon)) }}
